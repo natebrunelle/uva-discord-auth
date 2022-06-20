@@ -229,7 +229,7 @@ async def say(ctx, arg):
 @bot.command()
 @commands.has_role("Admin")
 async def react(ctx, message_id, *emojis):
-    log()
+    log(f"{ctx.author} called react")
     message = await ctx.channel.fetch_message(message_id)
     for emoji in emojis:
         await message.add_reaction(emoji)
